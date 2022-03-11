@@ -1,7 +1,7 @@
 "use strict";
 
 import Sequelize from "sequelize";
-import Cats from "./cats.js";
+import Facts from "./facts.js";
 
 const env = process.env.NODE_ENV || "development";
 import configFile from "../config/config.js";
@@ -20,7 +20,7 @@ if (config.use_env_variable) {
   );
 }
 
-db["Cats"] = Cats(sequelize, Sequelize.DataTypes);
+db["Facts"] = Facts(sequelize, Sequelize.DataTypes);
 
 Object.keys(db).forEach((modelName) => {
   if (db[modelName].associate) {

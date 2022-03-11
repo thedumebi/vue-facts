@@ -11,8 +11,8 @@
  * @returns
  */
 export default (sequelize, DataTypes) => {
-  const Cat = sequelize.define(
-    "Cats",
+  const Fact = sequelize.define(
+    "Facts",
     {
       _id: {
         type: DataTypes.STRING,
@@ -30,10 +30,10 @@ export default (sequelize, DataTypes) => {
       deleted: DataTypes.BOOLEAN,
       used: DataTypes.BOOLEAN,
     },
-    { sequelize, tableName: "Cats", underscored: false, timestamps: false }
+    { sequelize, tableName: "Facts", underscored: false, timestamps: false }
   );
 
-  Cat.associate = function (models) {};
+  Fact.associate = function (models) {};
 
-  return Cat;
+  return Fact;
 };

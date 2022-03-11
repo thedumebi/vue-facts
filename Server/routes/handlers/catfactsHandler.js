@@ -5,7 +5,7 @@ import config from "../../config.js";
 import model from "../../models/index.js";
 import resolve from "../../utils/promises/index.js";
 
-const Facts = model.Cats;
+const Facts = model.Facts;
 
 const functions = {
   getListFromAPI: async function () {
@@ -35,12 +35,12 @@ const functions = {
       throw error;
     } else {
       const result = await res.json();
-      await Promise.all(
-        result.map((result) => {
-          const cat = Facts.create(result);
-          return cat;
-        })
-      );
+
+      result.forEach((result) => {
+        const cat = Facts.create(result);
+        return cat;
+      });
+
       return result;
     }
   },
