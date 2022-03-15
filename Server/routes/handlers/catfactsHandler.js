@@ -62,7 +62,7 @@ const functions = {
   },
   deleteCatFact: async (id) => {
     const [fact, error] = await resolve(Facts.findByPk(id));
-    console.log(fact);
+
     if (error) throw error;
     if (!fact) {
       return false;
